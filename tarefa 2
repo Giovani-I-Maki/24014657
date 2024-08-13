@@ -2,15 +2,15 @@
 
 int main(){
 
-	float Receita, Despesa, valortotal;
+	float Receita, Despesa, valortotal;//variaveis
 
-	printf("coloque sua Receita: ");
+	printf("coloque sua Receita: ");//salva o saldo
 	scanf("%f",&Receita);
 
-	printf("coloque sua Despesa: ");
+	printf("coloque sua Despesa: ");//salva o debito
 	scanf("%f",&Despesa);
 
-	valortotal = (Receita - Despesa);
-	printf("seu total foi:%.2f",valortotal);
+	valortotal = (Receita - Despesa);//calculos
+	printf("seu total foi:%.2f",valortotal);//mostra os valores %.2f serve para limitar as casas que serao mostradas 
 
 }
