@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(){
+
+	float Receita, Despesa, valortotal;
+
+	printf("coloque sua Receita: ");
+	scanf("%f",&Receita);
+
+	printf("coloque sua Despesa: ");
+	scanf("%f",&Despesa);
+
+	valortotal = (Receita - Despesa);
+	printf("seu total foi:%.2f",valortotal);
+
+}
