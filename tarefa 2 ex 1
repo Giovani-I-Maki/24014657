@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int visitantes, VTOTAL = 0;
+    char opcao;
+
+    do {
+        printf("Digite o número de visitantes: ");
+        scanf("%d", &visitantes);
+
+        VTOTAL += visitantes;  // Soma o número de visitantes ao total
+
+        printf("Você registrou %d visitantes hoje. Total acumulado: %d\n", visitantes, VTOTAL);   // Exibe uma mensagem de confirmação
+        printf("Deseja registrar mais visitantes? (S/N): "); // Pergunta se deseja registrar mais visitantes
+        scanf(" %c", &opcao);
+
+    } while(opcao == 'S' || opcao == 's');
+
+    printf("Total final de visitantes no dia: %d\n", VTOTAL);
+
+    return 0;
+}
+/*do-while serve para rodar varias vezes o mesmo bloco
+Vtotal vai ser a variavel que vai guardar a quantidade de visitantes
+'VTOTAL += visitantes' adiciona o número de visitantes inseridos ao total acumulado.*/
