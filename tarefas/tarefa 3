@@ -1,0 +1,279 @@
+1 exercicio 
+A)
+#include <stdio.h>
+
+int main(){
+    
+    int n =4000000000; 
+    /* nao vai funcionar pois atingiu o limite do int para substituir podemos usar o float ou o double que tem mais espaço de memoria*/
+   
+    printf("%d\n", n);
+    return 0;
+}
+
+correto 
+int main(){
+    
+    float n =4000000000; 
+    
+    printf("%d\n", n);
+    return 0;
+}
+
+B)
+
+#include <stdio.h>
+
+int main(){
+    
+ printf("%d\n", a);
+ int a; //nao funcionara pois a variavel esta depois da funcao logo nao tera oq exibir
+ 
+ return 0;
+ 
+}
+
+correto
+#include <stdio.h>
+
+int main(){
+
+int a;    
+printf("%d\n", a);
+ 
+ return 0;
+ 
+}
+
+C)
+
+#include <stdio.h>
+ 
+ int main() {
+ 
+ printf("%d", 4);
+ printf("%d", 2);/*com esse comando do jeito que esta ele executara um na frente do outro
+ assim nao mostrando o real numero ou seja vai aparecer 42 e nao 4 e 2*/
+ 
+ return 0;
+ }
+
+ correção
+ #include <stdio.h>
+ 
+ int main() {
+ 
+ printf("%d", 4);
+ printf("%d\n", 2);//usamos \n para pular uma linha
+ 
+ return 0;
+ }
+
+ D)
+ #include <stdio.h>
+ 
+ int main() {
+ 
+ int a;
+ scanf("%d", a);//scanf esta sem o &(e comercial) que serve para salvar na memoria a variavel
+ printf("%d", a);
+ 
+ return 0;
+ 
+ }
+
+ correto
+ #include <stdio.h>
+ 
+ int main() {
+ 
+ int a;
+ scanf("%d", &a);
+ printf("%d", a);
+ 
+ return 0;
+ 
+ }
+
+ 2)
+ A)
+
+ #include <stdio.h>
+ 
+ int main() {
+ 
+ float num1, num2, num3;
+ printf("informe 3 numeros por favor");
+ scanf("%f %f %f", &num1, &num2, &num3);
+ 
+ printf("vou te devolver na ordem inversa\n");
+ printf("%.2f %.2f %.2f", num3, num2, num1);
+ 
+ return(0);
+ }
+
+ B)
+ 
+ #include <stdio.h>
+ 
+ int main() {
+ 
+ char nome[100];//o []serve para definir quantas letras queremos colocar
+ printf("Olá eu sou o Nº 1, como é seu nome?");
+ scanf("%s", &nome);
+ 
+ printf("Bem-vindo ao clube %s",nome);
+ 
+ return(0);
+ }
+
+ C)
+ #include <stdio.h>
+ 
+ int main() {
+ int idade;
+ char nome[100];
+ printf("Olá eu sou o Nº 1, como é seu nome?");
+ scanf("%s", &nome);
+ 
+ printf("Bem-vindo %s\n",nome);
+ printf("quantos anos vc tem?");
+ scanf("%i", &idade);
+ 
+ printf("vc tem aproximadamente de dias possuidos %i", idade*365);
+ return(0);
+ }
+
+D)
+#include <stdio.h>
+ 
+ int main() {
+ float A, R, P;
+ P =3.14;
+ 
+ printf("Bem vindo me informe um raio para eu calcular a area para vc");
+ scanf("%f", &R);
+ 
+ A = P*(R*R);
+ printf("essa e sua area %.2f", A);
+ 
+ return(0);
+ }
+ 
+E)
+#include <stdio.h>
+ 
+int main() {
+    float A, largura, altura, consumo, litros, latas;
+    
+    printf("vamos calcular quantas latas vc vai precisar me informe a largura e altura da parede em metros");
+    scanf("%f %f", &largura , &altura);
+    
+    A= largura * altura;
+    consumo = 0.3;
+    litros= A * consumo;
+    
+    latas = litros/2;
+    
+    printf("voce precisa de %.2f latas de tinta para pintar", latas);
+    
+return(0);
+}
+ 
+F)
+
+#include <stdio.h>
+ 
+int main() {
+    float tempf, tempc, temp;
+    
+    printf("vamos calcular a temperatura em Fahrenheit: ");
+    scanf("%f", &tempf);
+    
+    tempc = (tempf - 32) * 5/9;
+    
+    printf("a temp e %.2f c", tempc);
+    
+return(0);
+}
+ 
+G)
+#include <stdio.h>
+ 
+int main() {
+    float p, v, temp, M;
+    
+    printf("vamos calcular a massa de ar me de a pressao: ");
+    scanf("%f", &p);
+    
+    printf("ok agora o volume: ");
+    scanf("%f", &v);
+    
+    printf("por ultimo a temperatura: ");
+    scanf("%f", &temp);
+    
+    
+    M = p * v / (0.37*(temp + 460));
+    
+    printf("a massa de ar e %.4f ", M);
+    
+return(0);
+}
+
+H
+
+I
+
+J)
+#include <stdio.h>
+ 
+int main() {
+    int nota, nota1, nota2, nota3 ,total;
+    
+    printf("vamos contar o dinheiro moedas de 1 real: ");
+    scanf("%i", &nota);
+    
+    printf("notas de 10: ");
+    scanf("%i", &nota1);
+    
+    printf("notas de 50: ");
+    scanf("%i", &nota2);
+    
+    printf("notas de 100: ");
+    scanf("%i", &nota3);
+    
+    
+    total = (nota + nota1 * 10) + (nota2 * 50 + nota3 * 100);
+    
+    printf("seu dinheiro em reais e %i ", total);
+    
+return(0);
+}
+ 
+l)
+#include <stdio.h>
+ 
+int main() {
+    int nota, nota1, nota10, nota50 ,nota100, valor;
+    
+    printf("vamos contar o dinheiro: ");
+    scanf("%i", &valor);
+    nota100 = valor / 100;
+    valor = valor % 100;
+    
+    nota50 = valor / 50;
+    valor = valor % 50;
+    
+    nota10 = valor / 10;
+    valor = valor % 10;
+    
+    nota1 = valor / 1;
+    valor = valor % 1;
+    
+    printf("deu %i notas de 100\n", nota100);
+    printf("deu %i notas de 50\n ", nota50);
+    printf("deu %i notas de 10\n", nota10);
+    printf("deu %i moedas de 1\n ", nota1);
+    
+return(0);
+}
