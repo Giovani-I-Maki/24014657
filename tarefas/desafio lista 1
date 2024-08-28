@@ -1,0 +1,82 @@
+#include <stdio.h>
+
+int main() {
+    int ac1, ac2, ac3, qdej, qmax;
+    float saldo = 1000;
+    char op;
+    printf("vc pode escolher 3 açaoes para comprar vc tem de saldo %f\n", saldo);
+    
+    printf("açao 1 custa: 24.13 e rende ao ano 17 reais\n");
+    printf("açao 2 custa: 11 e rende ao ano 35 reais\n");
+    printf("açao 3 custa: 38.65 e rende ao ano 25 reais\n");
+   comprarm:
+   voltar:
+    printf("quantas açoes 1 vc deseja comprar?\n");
+    scanf("%i", &qdej);
+    
+    qmax = (saldo / 24.13);
+    
+     if (qdej <= qmax){ //compara a quantidade desejada se possivel ele compara se nao ele negara a compra e perguntara de novo
+        printf("Compra realizada com sucesso!\n");
+        printf("Você comprou %d açoes.\n", qdej);
+        saldo -= qdej * 24.13;
+        ac1 = qdej;
+        printf("Saldo restante: %.2f reais\n", saldo);
+    } else {
+        printf("Saldo insuficiente para comprar %d açaoes 1 .\n", qdej);
+        printf("Você pode comprar no máximo %d açaoes.\n", qmax);
+    goto voltar;
+    }
+    qdej = qdej - qdej; //limpando a quantidade desejada de antes
+    
+    voltar2:
+    printf("quantas açoes 2 vc deseja comprar?\n");
+    scanf("%i", &qdej);
+   
+    qmax = (saldo / 11);
+    
+  if (qdej <= qmax){
+        printf("Compra realizada com sucesso!\n");
+        printf("Você comprou %d açoes 2.\n", qdej);
+        saldo -= qdej * 11;
+        ac2 = qdej;
+        printf("Saldo restante: %.2f reais\n", saldo);
+    } else {
+        printf("Saldo insuficiente para comprar %d açaoes 2 .\n", qdej);
+        printf("Você pode comprar no máximo %d açaoes.\n", qmax);
+    goto voltar2;
+    }
+    
+    qdej = qdej - qdej;
+    
+    voltar3:
+    
+    printf("quantas açoes 3 vc deseja comprar?\n");
+    scanf("%i", &qdej);
+   
+    qmax = (saldo /38.65);
+    
+  if (qdej <= qmax){
+        printf("Compra realizada com sucesso!\n");
+        printf("Você comprou %d açoes 3.\n", qdej);
+        saldo -= qdej * 38.65;
+        ac3 = qdej;
+        printf("Saldo restante: %.2f reais\n", saldo);
+    } else {
+        printf("Saldo insuficiente para comprar %d açaoes 3 .\n", qdej);
+        printf("Você pode comprar no máximo %d açaoes.\n", qmax);
+    goto voltar3;
+    }
+    
+    printf("deseja comprar mais açoes?");
+    scanf("%s", &op);
+    
+    if (op  == 's'){//pergunta se quer comprar de novo se sim volta desde o começo
+    goto comprarm;
+    }
+    ac1 = ac1 * 17;
+    ac2 = ac2 * 35;
+    ac3 = ac3 * 25;
+    printf("o redimento das suas açoes foram %.2i, %.2i, %.2i,\n", ac1, ac2, ac3);
+    return 0;
+}
