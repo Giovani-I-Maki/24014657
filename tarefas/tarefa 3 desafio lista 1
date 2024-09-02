@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int ac1, ac2, ac3, qdej, qmax;
+    int ac1, ac2, ac3, qdej, qmax, acc1, acc2, acc3;
     float saldo = 1000;
     char op;
     printf("vc pode escolher 3 açaoes para comprar vc tem de saldo %f\n", saldo);
@@ -16,11 +16,12 @@ int main() {
     
     qmax = (saldo / 24.13);
     
-     if (qdej <= qmax){ //compara a quantidade desejada se possivel ele compara se nao ele negara a compra e perguntara de novo
+     if (qdej <= qmax && qdej >= 0){ //compara a quantidade desejada se possivel ele compara se nao ele negara a compra e perguntara de novo
         printf("Compra realizada com sucesso!\n");
         printf("Você comprou %d açoes.\n", qdej);
         saldo -= qdej * 24.13;
         ac1 = qdej;
+        acc1 = acc1 +ac1;
         printf("Saldo restante: %.2f reais\n", saldo);
     } else {
         printf("Saldo insuficiente para comprar %d açaoes 1 .\n", qdej);
@@ -35,11 +36,12 @@ int main() {
    
     qmax = (saldo / 11);
     
-  if (qdej <= qmax){
+  if (qdej <= qmax && qdej >= 0){
         printf("Compra realizada com sucesso!\n");
         printf("Você comprou %d açoes 2.\n", qdej);
         saldo -= qdej * 11;
         ac2 = qdej;
+        acc2 = acc2 +ac2;
         printf("Saldo restante: %.2f reais\n", saldo);
     } else {
         printf("Saldo insuficiente para comprar %d açaoes 2 .\n", qdej);
@@ -56,11 +58,12 @@ int main() {
    
     qmax = (saldo /38.65);
     
-  if (qdej <= qmax){
+  if (qdej <= qmax && qdej >= 0){
         printf("Compra realizada com sucesso!\n");
         printf("Você comprou %d açoes 3.\n", qdej);
         saldo -= qdej * 38.65;
         ac3 = qdej;
+        acc3 = acc3 +ac3;
         printf("Saldo restante: %.2f reais\n", saldo);
     } else {
         printf("Saldo insuficiente para comprar %d açaoes 3 .\n", qdej);
@@ -74,9 +77,9 @@ int main() {
     if (op  == 's'){//pergunta se quer comprar de novo se sim volta desde o começo
     goto comprarm;
     }
-    ac1 = ac1 * 17;
-    ac2 = ac2 * 35;
-    ac3 = ac3 * 25;
-    printf("o redimento das suas açoes foram %.2i, %.2i, %.2i,\n", ac1, ac2, ac3);
+    acc1 = acc1 * 17;
+    acc2 = acc2 * 35;
+    acc3 = acc3 * 25;
+    printf("o redimento das suas açoes foram %.2i, %.2i, %.2i,\n", acc1, acc2, acc3);
     return 0;
 }
