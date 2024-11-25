@@ -1,0 +1,78 @@
+//ex 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void monitorar_temperatura() {
+    float temperatura;
+
+    while (1) {
+        printf("Digite a temperatura atual (ou -999 para sair): ");
+        scanf("%f", &temperatura);
+
+        // Condição para encerrar o programa
+        if (temperatura == -999) {
+            printf("Encerrando o monitoramento...\n");
+            break;
+        }
+
+        // Verificação do intervalo de temperatura
+        if (temperatura < 20.0 || temperatura > 25.0) {
+            printf("ALERTA: Temperatura fora da faixa segura! (%.2f°C)\n", temperatura);
+        } else {
+            printf("Temperatura dentro da faixa segura. (%.2f°C)\n", temperatura);
+        }
+    }
+}
+
+int main() {
+    printf("Sistema de monitoramento de temperatura iniciado.\n");
+    printf("A faixa segura é entre 20°C e 25°C.\n");
+    printf("Digite -999 para encerrar o programa.\n\n");
+
+    monitorar_temperatura();
+
+    return 0;
+}
+
+//ex2
+#include <stdio.h>
+#include <stdlib.h>
+
+void monitorar_combustivel() {
+    int nivel_combustivel;
+
+    while (1) {
+        printf("Digite o nível de combustível atual (em %%, ou -1 para sair): ");
+        scanf("%d", &nivel_combustivel);
+
+        // Verifica se o usuário deseja encerrar o programa
+        if (nivel_combustivel == -1) {
+            printf("Encerrando o monitoramento do combustível...\n");
+            break;
+        }
+
+        // Verificação do nível de combustível
+        if (nivel_combustivel < 0 || nivel_combustivel > 100) {
+            printf("Erro: Nível de combustível inválido! Digite um valor entre 0 e 100.\n");
+        } else if (nivel_combustivel < 15) {
+            printf("ALERTA: Nível de combustível baixo (%d%%). Por favor, recarregue o veículo!\n", nivel_combustivel);
+        } else if (nivel_combustivel == 100) {
+            printf("Nível de combustível completo (%d%%). Monitoramento encerrado.\n", nivel_combustivel);
+            break;
+        } else {
+            printf("Nível de combustível suficiente (%d%%). Continuando o monitoramento...\n", nivel_combustivel);
+        }
+    }
+}
+
+int main() {
+    printf("Sistema de monitoramento de combustível iniciado.\n");
+    printf("O sistema alerta se o nível de combustível estiver abaixo de 15%%.\n");
+    printf("Digite -1 para encerrar o programa.\n\n");
+
+    monitorar_combustivel();
+
+    return 0;
+}
